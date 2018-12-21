@@ -56,8 +56,6 @@ namespace RPSLS
                 Console.WriteLine("No more than 2 players");
                 createPlayers();
             }
-
-
         }
 
         public void runMyGame()
@@ -71,8 +69,6 @@ namespace RPSLS
             }
             while (round < 3);
             bestOf3();
-            
-
         }
 
         public void setGestures()
@@ -92,7 +88,7 @@ namespace RPSLS
                 case "rock":
                     if(player2Gesture.ToLower() == "scissors" || player2Gesture.ToLower() == "lizard")
                     {
-                        Console.WriteLine(player1.name + "wins this Round");
+                        Console.WriteLine(player1.name + " wins this Round");
                         player1.winnings++;
                     }
                     else if(player1Gesture.ToLower() == player2Gesture.ToLower())
