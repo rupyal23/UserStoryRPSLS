@@ -10,22 +10,33 @@ namespace RPSLS
     {
         //Member Variables
         public string name;
+        public int winnings;
+        public string gesture;
+        public List<string> gestures = new List<string>() { "Rock", "Scissors", "Paper", "Spock", "Lizard" };
+
 
         //Constructor
-        public Player(string name)
+        public Player()
         {
-            this.name = name;
+
         }
 
         //Member Methods
-        public string createGesture()
+        //method to create name
+        public void setName()
         {
-            List<string> gestures = new List<string>();
-            gestures.Add("Rock");
-            gestures.Add("Paper");
-            gestures.Add("Scissors");
-            gestures.Add("Lizard");
-            gestures.Add("Spock");
+            Console.WriteLine("Please Enter the player name:");
+            name = Console.ReadLine();
+        }
+            
+
+
+        //Method for creating random gesture
+        public virtual string createGesture()
+        {
+            Console.WriteLine("Enter the gesture you want to play "+name);
+            gesture = Console.ReadLine();
+            return gesture;
         }
 
     }

@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Program
+    class Player1 : Player
     {
-        static void Main(string[] args)
+        //member variables
+
+        //constructor
+        public Player1()
         {
-            Game myGame = new Game();
-            myGame.runMyGame();
-            Console.ReadLine();
+
         }
+        //member methods
+
+        
     }
 }

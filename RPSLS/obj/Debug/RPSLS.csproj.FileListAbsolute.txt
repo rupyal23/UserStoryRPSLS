@@ -1,0 +1,7 @@
+D:\devCodeCamp\Technetium\Projects\C#\RPSLS\UserStoryRPSLS\RPSLS\obj\Debug\RPSLS.csprojAssemblyReference.cache
+D:\devCodeCamp\Technetium\Projects\C#\RPSLS\UserStoryRPSLS\RPSLS\obj\Debug\RPSLS.csproj.CoreCompileInputs.cache
+D:\devCodeCamp\Technetium\Projects\C#\RPSLS\UserStoryRPSLS\RPSLS\bin\Debug\RPSLS.exe.config
+D:\devCodeCamp\Technetium\Projects\C#\RPSLS\UserStoryRPSLS\RPSLS\bin\Debug\RPSLS.exe
+D:\devCodeCamp\Technetium\Projects\C#\RPSLS\UserStoryRPSLS\RPSLS\bin\Debug\RPSLS.pdb
+D:\devCodeCamp\Technetium\Projects\C#\RPSLS\UserStoryRPSLS\RPSLS\obj\Debug\RPSLS.exe
+D:\devCodeCamp\Technetium\Projects\C#\RPSLS\UserStoryRPSLS\RPSLS\obj\Debug\RPSLS.pdb
