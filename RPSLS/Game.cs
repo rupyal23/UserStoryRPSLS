@@ -39,21 +39,24 @@ namespace RPSLS
             playerNumber = int.Parse(Console.ReadLine());
             if(playerNumber == 1)
             {
-                player1 = new Player1();
+                player1 = new Human();
                 player2 = new AI();
                 player1.setName();
+                Console.WriteLine("Welcome "+player1.name);
                 player2.setName();
             }
             else if (playerNumber == 2)
             {
-                player1 = new Player1();
-                player2 = new Player1();
+                player1 = new Human();
+                player2 = new Human();
                 player1.setName();
+                Console.WriteLine("Welcome " + player1.name);
                 player2.setName();
+                Console.WriteLine("Welcome " + player2.name);
             }
             else
             {
-                Console.WriteLine("No more than 2 players");
+                Console.WriteLine("No more than 2 players please");
                 createPlayers();
             }
         }
@@ -69,15 +72,42 @@ namespace RPSLS
             }
             while (round < 3);
             bestOf3();
+            playAgain();
+
         }
 
-        public void setGestures()
+        public void playAgain()
         {
-
-
+            Console.WriteLine("Do you want to play again? Enter 'yes' or 'no'.");
+            string response = Console.ReadLine();
+            if(yesNoValidation(response))
+            {
+                switch (response)
+                {
+                    case "yes":
+                        round = 0;
+                        runMyGame();
+                        break;
+                    case "no":
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Not a valid response!");
+                playAgain();
+            }
         }
-     
 
+        public bool yesNoValidation(string input)
+        {
+            if(input.ToLower().Equals("yes") || input.ToLower().Equals("no"))
+            {
+                return true;
+            }
+            
+            return false;
+        }
 
         public void gameLogic()
         {

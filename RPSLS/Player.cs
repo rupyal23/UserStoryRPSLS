@@ -40,7 +40,7 @@ namespace RPSLS
             {
                 if (!Char.IsLetter(c))
                 {
-                    Console.WriteLine("Please enter letter only.");
+                    Console.WriteLine("Please enter letters only. Try agin!");
                     return false;
                 }
                
