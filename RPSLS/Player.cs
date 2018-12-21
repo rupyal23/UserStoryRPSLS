@@ -23,7 +23,7 @@ namespace RPSLS
 
         //Member Methods
         //method to create name
-        public void setName()
+        public virtual void setName()
         {
             Console.WriteLine("Please Enter the player name:");
             name = Console.ReadLine();

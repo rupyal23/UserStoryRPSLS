@@ -14,9 +14,7 @@ namespace RPSLS
         public int round = 0;
         public int playerNumber;
         
-                
-
-
+        
 
         //Constructor
         public Game()
@@ -44,6 +42,7 @@ namespace RPSLS
                 player1 = new Player1();
                 player2 = new AI();
                 player1.setName();
+                player2.setName();
             }
             else if (playerNumber == 2)
             {
@@ -55,33 +54,39 @@ namespace RPSLS
             else
             {
                 Console.WriteLine("No more than 2 players");
+                createPlayers();
             }
+
 
         }
 
         public void runMyGame()
         {
             createPlayers();
-            
-            if(playerNumber == 1 || playerNumber == 2)
+            do
             {
+                round++;
+                Console.WriteLine("Begin Round "+round+" :");
                 gameLogic();
             }
-            else
-            {
-                createPlayers();
-            }
+            while (round < 3);
+            bestOf3();
             
 
         }
 
+        public void setGestures()
+        {
+
+
+        }
+     
 
 
         public void gameLogic()
         {
             string player1Gesture = player1.createGesture();
             string player2Gesture = player2.createGesture();
-
             switch (player1Gesture.ToLower())
             {
                 case "rock":
@@ -93,11 +98,17 @@ namespace RPSLS
                     else if(player1Gesture.ToLower() == player2Gesture.ToLower())
                     {
                         Console.WriteLine("It's a Tie !!. Press Enter to Restart.");
+                        round = 0;
                     }
-                    else
+                    else if(player2Gesture.ToLower() == "paper" || player2Gesture.ToLower() == "spock")
                     {
                         Console.WriteLine(player2.name +" wins this Round");
                         player2.winnings++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a Valid gesture");
+                        player2Gesture = player2.createGesture();
                     }
                     break;
 
@@ -110,11 +121,17 @@ namespace RPSLS
                     else if (player1Gesture.ToLower() == player2Gesture.ToLower())
                     {
                         Console.WriteLine("It's a Tie !!. Press Enter to Restart.");
+                        round = 0;
                     }
-                    else
+                    else if(player2Gesture.ToLower() == "scissors" || player2Gesture.ToLower() == "lizard")
                     {
                         Console.WriteLine(player2.name + " wins this Round");
                         player2.winnings++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a Valid gesture");
+                        gameLogic();
                     }
                     break;
 
@@ -127,11 +144,16 @@ namespace RPSLS
                     else if (player1Gesture.ToLower() == player2Gesture.ToLower())
                     {
                         Console.WriteLine("It's a Tie !!. Press Enter to Restart.");
+                        round = 0;
                     }
-                    else
+                    else if(player2Gesture.ToLower() == "spock" || player2Gesture.ToLower() == "rock")
                     {
                         Console.WriteLine(player2.name + " wins this Round");
                         player2.winnings++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a Valid gesture");
                     }
                     break;
 
@@ -144,11 +166,16 @@ namespace RPSLS
                     else if (player1Gesture.ToLower() == player2Gesture.ToLower())
                     {
                         Console.WriteLine("It's a Tie !!. Press Enter to Restart.");
+                        round = 0;
                     }
-                    else
+                    else if(player2Gesture.ToLower() == "scissors" || player2Gesture.ToLower() == "rock")
                     {
                         Console.WriteLine(player2.name + " wins this Round");
                         player2.winnings++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Not a Valid gesture");
                     }
                     break;
 
@@ -161,16 +188,21 @@ namespace RPSLS
                     else if (player1Gesture.ToLower() == player2Gesture.ToLower())
                     {
                         Console.WriteLine("It's a Tie !!. Press Enter to Restart.");
+                        round = 0;
                     }
-                    else
+                    else if(player2Gesture.ToLower() == "lizard" || player2Gesture.ToLower() == "paper")
                     {
                         Console.WriteLine(player2.name + " wins this Round");
                         player2.winnings++;
                     }
+                    else
+                    {
+                        Console.WriteLine("Not a Valid gesture");
+                    }
                     break;
                 default:
-                    Console.WriteLine("Not a Valid gesture")
-                   
+                    Console.WriteLine("Not a Valid gesture");
+                    break;
             }
          
         }
@@ -195,14 +227,21 @@ namespace RPSLS
 
         }
 
-        public void checkWinnerEveryRound()
+        public void displayWinnerEveryRound(int winnings)
         {
-
+            
         }
 
         public void bestOf3()
         {
-
+            if(player1.winnings > player2.winnings)
+            {
+                Console.WriteLine(player1.name+" is the WINNER");
+            }
+            else
+            {
+                Console.WriteLine(player2.name + " is the WINNER");
+            }
         }
      
     }

@@ -23,5 +23,10 @@ namespace RPSLS
 
             return gesturePlayed;
         }
+
+        public override void setName()
+        {
+            name = "Computer";
+        }
     }
 }
